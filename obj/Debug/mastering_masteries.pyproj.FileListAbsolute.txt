@@ -1,0 +1,11 @@
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\Microsoft.PythonTools.WebRole.dll
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\obj\Debug\attach_server.py
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\obj\Debug\visualstudio_py_debugger.py
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\obj\Debug\visualstudio_py_repl.py
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\obj\Debug\visualstudio_py_util.py
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\obj\Debug\__init__.py
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\obj\Debug\__main__.py
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\AzureSetup.cfg
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\Microsoft.PythonTools.AzureSetup.exe
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\Microsoft.PythonTools.AzureSetup.exe.config
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\wfastcgi.py

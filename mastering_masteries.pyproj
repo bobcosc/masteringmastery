@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e993e0c3-6bc3-472d-ba94-cd83ab1fbd1d}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterVersion>3.4</InterpreterVersion>
+    <UseIISExpress>true</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="CONTRIBUTORS.txt" />
+    <Content Include="mastering_masteries\static\css\project.css" />
+    <Content Include="mastering_masteries\static\images\favicon.ico" />
+    <Content Include="mastering_masteries\static\js\project.js" />
+    <Content Include="mastering_masteries\templates\404.html" />
+    <Content Include="mastering_masteries\templates\500.html" />
+    <Content Include="mastering_masteries\templates\account\base.html" />
+    <Content Include="mastering_masteries\templates\account\email.html" />
+    <Content Include="mastering_masteries\templates\account\email_confirm.html" />
+    <Content Include="mastering_masteries\templates\account\email_confirmed.html" />
+    <Content Include="mastering_masteries\templates\account\login.html" />
+    <Content Include="mastering_masteries\templates\account\logout.html" />
+    <Content Include="mastering_masteries\templates\account\password_change.html" />
+    <Content Include="mastering_masteries\templates\account\password_reset.html" />
+    <Content Include="mastering_masteries\templates\account\password_reset_done.html" />
+    <Content Include="mastering_masteries\templates\account\password_reset_from_key.html" />
+    <Content Include="mastering_masteries\templates\account\password_reset_from_key_done.html" />
+    <Content Include="mastering_masteries\templates\account\password_set.html" />
+    <Content Include="mastering_masteries\templates\account\signup.html" />
+    <Content Include="mastering_masteries\templates\account\signup_closed.html" />
+    <Content Include="mastering_masteries\templates\account\verification_sent.html" />
+    <Content Include="mastering_masteries\templates\account\verified_email_required.html" />
+    <Content Include="mastering_masteries\templates\base.html" />
+    <Content Include="mastering_masteries\templates\pages\about.html" />
+    <Content Include="mastering_masteries\templates\pages\home.html" />
+    <Content Include="mastering_masteries\templates\users\user_detail.html" />
+    <Content Include="mastering_masteries\templates\users\user_form.html" />
+    <Content Include="mastering_masteries\templates\users\user_list.html" />
+    <Content Include="pytest.ini" />
+    <Content Include="requirements\base.txt" />
+    <Content Include="requirements\local.txt" />
+    <Content Include="requirements\production.txt" />
+    <Content Include="requirements\test.txt" />
+    <Content Include="tests\hitchreqs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="config\settings\common.py" />
+    <Compile Include="config\settings\local.py" />
+    <Compile Include="config\settings\production.py" />
+    <Compile Include="config\settings\__init__.py" />
+    <Compile Include="config\urls.py" />
+    <Compile Include="config\wsgi.py" />
+    <Compile Include="config\__init__.py" />
+    <Compile Include="docs\conf.py" />
+    <Compile Include="docs\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="mastering_masteries\contrib\sites\migrations\0001_initial.py" />
+    <Compile Include="mastering_masteries\contrib\sites\migrations\0002_set_site_domain_and_name.py" />
+    <Compile Include="mastering_masteries\contrib\sites\migrations\0003_auto_20160425_2045.py" />
+    <Compile Include="mastering_masteries\contrib\sites\migrations\__init__.py" />
+    <Compile Include="mastering_masteries\contrib\sites\__init__.py" />
+    <Compile Include="mastering_masteries\contrib\__init__.py" />
+    <Compile Include="mastering_masteries\taskapp\celery.py" />
+    <Compile Include="mastering_masteries\taskapp\__init__.py" />
+    <Compile Include="mastering_masteries\users\adapters.py" />
+    <Compile Include="mastering_masteries\users\admin.py" />
+    <Compile Include="mastering_masteries\users\migrations\0001_initial.py" />
+    <Compile Include="mastering_masteries\users\migrations\0002_auto_20160425_2045.py" />
+    <Compile Include="mastering_masteries\users\migrations\__init__.py" />
+    <Compile Include="mastering_masteries\users\models.py" />
+    <Compile Include="mastering_masteries\users\tests\factories.py" />
+    <Compile Include="mastering_masteries\users\tests\test_admin.py" />
+    <Compile Include="mastering_masteries\users\tests\test_models.py" />
+    <Compile Include="mastering_masteries\users\tests\test_views.py" />
+    <Compile Include="mastering_masteries\users\tests\__init__.py" />
+    <Compile Include="mastering_masteries\users\urls.py" />
+    <Compile Include="mastering_masteries\users\views.py" />
+    <Compile Include="mastering_masteries\users\__init__.py" />
+    <Compile Include="mastering_masteries\__init__.py" />
+    <Compile Include="tests\engine.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="config" />
+    <Folder Include="config\settings" />
+    <Folder Include="docs" />
+    <Folder Include="mastering_masteries" />
+    <Folder Include="mastering_masteries\contrib" />
+    <Folder Include="mastering_masteries\contrib\sites" />
+    <Folder Include="mastering_masteries\contrib\sites\migrations" />
+    <Folder Include="mastering_masteries\static\" />
+    <Folder Include="mastering_masteries\static\css" />
+    <Folder Include="mastering_masteries\static\images" />
+    <Folder Include="mastering_masteries\static\js" />
+    <Folder Include="mastering_masteries\taskapp" />
+    <Folder Include="mastering_masteries\templates" />
+    <Folder Include="mastering_masteries\templates\account" />
+    <Folder Include="mastering_masteries\templates\pages" />
+    <Folder Include="mastering_masteries\templates\users" />
+    <Folder Include="mastering_masteries\users" />
+    <Folder Include="mastering_masteries\users\migrations" />
+    <Folder Include="mastering_masteries\users\tests" />
+    <Folder Include="requirements" />
+    <Folder Include="tests" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.4" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60866/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>True</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
