@@ -67,6 +67,6 @@ CELERY_ALWAYS_EAGER = True
 # Your local stuff: Below this line define 3rd party library settings
 DATABASES = {
     # Raises ImproperlyConfigured exception if DATABASE_URL not in os.environ
-    'default': env.db('DATABASE_URL', default='postgres://localhost/mastering_masteries'),
+    'default': env.db('DATABASE_URL', default='postgres://masteryuser:test@localhost/masteries'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True

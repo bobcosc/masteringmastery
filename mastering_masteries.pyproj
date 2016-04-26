@@ -14,6 +14,9 @@
     <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
     <InterpreterVersion>3.4</InterpreterVersion>
     <UseIISExpress>true</UseIISExpress>
+    <PythonDebugWebServerCommandArguments>runserver --settings config.settings.local</PythonDebugWebServerCommandArguments>
+    <DjangoSettingsModule>$(MSBuildProjectName).config.settings.local</DjangoSettingsModule>
+    <PythonRunWebServerCommandArguments>runserver --settings config.settings.local</PythonRunWebServerCommandArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -64,6 +67,13 @@
     <Compile Include="config\urls.py" />
     <Compile Include="config\wsgi.py" />
     <Compile Include="config\__init__.py" />
+    <Compile Include="data\admin.py" />
+    <Compile Include="data\apps.py" />
+    <Compile Include="data\migrations\__init__.py" />
+    <Compile Include="data\models.py" />
+    <Compile Include="data\tests.py" />
+    <Compile Include="data\views.py" />
+    <Compile Include="data\__init__.py" />
     <Compile Include="docs\conf.py" />
     <Compile Include="docs\__init__.py" />
     <Compile Include="manage.py" />
@@ -95,6 +105,8 @@
   <ItemGroup>
     <Folder Include="config" />
     <Folder Include="config\settings" />
+    <Folder Include="data\" />
+    <Folder Include="data\migrations\" />
     <Folder Include="docs" />
     <Folder Include="mastering_masteries" />
     <Folder Include="mastering_masteries\contrib" />
