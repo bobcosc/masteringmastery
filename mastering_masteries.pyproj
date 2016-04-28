@@ -25,6 +25,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="CONTRIBUTORS.txt" />
+    <Content Include="data\templates\data\index.html" />
     <Content Include="mastering_masteries\static\css\project.css" />
     <Content Include="mastering_masteries\static\images\favicon.ico" />
     <Content Include="mastering_masteries\static\js\project.js" />
@@ -69,6 +70,9 @@
     <Compile Include="config\__init__.py" />
     <Compile Include="data\admin.py" />
     <Compile Include="data\apps.py" />
+    <Compile Include="data\helper.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="data\migrations\__init__.py" />
     <Compile Include="data\models.py" />
     <Compile Include="data\tests.py" />
@@ -107,6 +111,8 @@
     <Folder Include="config\settings" />
     <Folder Include="data\" />
     <Folder Include="data\migrations\" />
+    <Folder Include="data\templates\" />
+    <Folder Include="data\templates\data\" />
     <Folder Include="docs" />
     <Folder Include="mastering_masteries" />
     <Folder Include="mastering_masteries\contrib" />

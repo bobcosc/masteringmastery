@@ -1,9 +1,9 @@
-{% load staticfiles i18n %}<!DOCTYPE html>
+﻿{% load staticfiles i18n %}<!DOCTYPE html>
 <html lang="en" >
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{% block title %}Mastering Masteries{% endblock title %}</title>
+    <title>{% block title %}lolsbest{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -15,7 +15,7 @@
 
     {% block css %}
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
     <!-- Your stuff: Third-party css libraries go here -->
 
@@ -29,46 +29,28 @@
 
   <body>
 
-    <div class="m-b">
-      <nav class="navbar navbar-dark navbar-static-top bg-inverse">
-        <div class="container">
-          <a class="navbar-brand" href="/">Mastering Masteries</a>
-          <button type="button" class="navbar-toggler hidden-sm-up pull-xs-right" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
-            &#9776;
-          </button>
+      <nav class="navbar navbar-light navbar-fixed-top">
+    <div class="container"> 
+        <div class="small-margin-top-bottom clearfix">
+        <a class="navbar-brand" href="/">Mastering Mastery</a>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-toggleable-xs" id="bs-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'about' %}">About</a>
-              </li>
-            </ul>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active"> <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 
-            <ul class="nav navbar-nav pull-xs-right">
-              {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Logout" %}</a>
-                </li>
-              {% else %}
-                <li class="nav-item">
-                  <a id="sign-up-link" class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>
-                </li>
-                <li class="nav-item">
-                  <a id="log-in-link" class="nav-link" href="{% url 'account_login' %}">{% trans "Log In" %}</a>
-                </li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </nav>
+            </li>
+            <li class="nav-item"> <a class="nav-link" href="#">About</a>
+
+            </li>
+        </ul>
+          
+        <form class="form-inline small-margin-top-bottom pull-right">
+            <input class="form-control" type="text" placeholder="Search">
+            <button class="btn btn-success-outline" type="submit">Search</button>
+        </form>
+           </div>  
     </div>
+</nav>
+
 
     <div class="container">
 
@@ -97,7 +79,9 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
 
       <!-- Latest compiled and minified JavaScript -->
-      <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+      <script src="http://code.highcharts.com/highcharts.js"></script>
 
       <!-- Your stuff: Third-party javascript libraries go here -->
 
