@@ -14,6 +14,9 @@ from .common import *  # noqa
 # ------------------------------------------------------------------------------
 DEBUG = env.bool('DJANGO_DEBUG', default=True)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TEMPLATE_CONTEXT': True,
+}
 
 # SECRET CONFIGURATION
 # ------------------------------------------------------------------------------

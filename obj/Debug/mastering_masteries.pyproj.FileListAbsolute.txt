@@ -9,3 +9,5 @@ C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\AzureSetup.cfg
 C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\Microsoft.PythonTools.AzureSetup.exe
 C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\Microsoft.PythonTools.AzureSetup.exe.config
 C:\Users\bob\Documents\masteringmastery\mastering_masteries\bin\wfastcgi.py
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\obj\Debug\web.config
+C:\Users\bob\Documents\masteringmastery\mastering_masteries\obj\Debug\web.debug.config

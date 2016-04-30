@@ -6,4 +6,23 @@
 <h1>Page Not found</h1>
 
 <p><div id="annie" style="min-width: 200px; max-width: 300px; height: 200px; margin: 0 auto"></div></p>
+{% for summoner in summoners %}
+    <p>{{summoner.summoner_name}}</p>
+{% endfor %}
+{% for entry in KogMaw %}
+    <p>{{entry}}</p>
+<p>lol</p>
+{% endfor %}
+
+{% for key, value in data.items %}
+<div class="col-md-3 center">
+<img class="img-responsive img-circle center"src="http://ddragon.leagueoflegends.com/cdn/6.9.1/img/champion/{{value.0.champion.image_full}}"/>
+    <p>{{value.0.champion.champion_name}}, {{value.0.champion.title}}</p>
+    <div class="annie" style="min-width: 200px; max-width: 300px; height: 200px; margin: 0 auto"></div>
+    {% for entry in value %}
+        <p>{{entry}}</p>
+    {% endfor %}
+    
+    </div>
+{% endfor %}
 {% endblock content %}

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{e993e0c3-6bc3-472d-ba94-cd83ab1fbd1d}</ProjectGuid>
+    <ProjectGuid>{c3e45a6f-d664-4729-82bd-938bb549520c}</ProjectGuid>
     <ProjectHome />
     <StartupFile>manage.py</StartupFile>
     <SearchPath />
@@ -11,12 +11,13 @@
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Django launcher</LaunchProvider>
-    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterId>{d59e3917-b688-415f-b127-7dcdd3ae9101}</InterpreterId>
     <InterpreterVersion>3.4</InterpreterVersion>
     <UseIISExpress>true</UseIISExpress>
-    <PythonDebugWebServerCommandArguments>runserver --settings config.settings.local</PythonDebugWebServerCommandArguments>
-    <DjangoSettingsModule>$(MSBuildProjectName).config.settings.local</DjangoSettingsModule>
-    <PythonRunWebServerCommandArguments>runserver --settings config.settings.local</PythonRunWebServerCommandArguments>
+    <DjangoSettingsModule>config.settings.local</DjangoSettingsModule>
+    <Environment>MASTERY_KEY=42487426-b34a-416c-addb-b1eec4098db8</Environment>
+    <PythonRunWebServerCommandEnvironment>MASTERY_KEY=42487426-b34a-416c-addb-b1eec4098db8</PythonRunWebServerCommandEnvironment>
+    <PythonDebugWebServerCommandEnvironment>MASTERY_KEY=42487426-b34a-416c-addb-b1eec4098db8</PythonDebugWebServerCommandEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -25,12 +26,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="CONTRIBUTORS.txt" />
-    <Content Include="data\templates\data\index.html" />
+    <Content Include="data\templates\index.html" />
     <Content Include="mastering_masteries\static\css\project.css" />
     <Content Include="mastering_masteries\static\images\favicon.ico" />
     <Content Include="mastering_masteries\static\js\project.js" />
     <Content Include="mastering_masteries\templates\404.html" />
     <Content Include="mastering_masteries\templates\500.html" />
+    <Content Include="mastering_masteries\templates\about.html" />
     <Content Include="mastering_masteries\templates\account\base.html" />
     <Content Include="mastering_masteries\templates\account\email.html" />
     <Content Include="mastering_masteries\templates\account\email_confirm.html" />
@@ -50,14 +52,18 @@
     <Content Include="mastering_masteries\templates\base.html" />
     <Content Include="mastering_masteries\templates\pages\about.html" />
     <Content Include="mastering_masteries\templates\pages\home.html" />
+    <Content Include="mastering_masteries\templates\privacy.html" />
+    <Content Include="mastering_masteries\templates\termsofuse.html" />
     <Content Include="mastering_masteries\templates\users\user_detail.html" />
     <Content Include="mastering_masteries\templates\users\user_form.html" />
     <Content Include="mastering_masteries\templates\users\user_list.html" />
+    <Content Include="obj\Debug\mastering_masteries.pyproj.FileListAbsolute.txt" />
     <Content Include="pytest.ini" />
     <Content Include="requirements\base.txt" />
     <Content Include="requirements\local.txt" />
     <Content Include="requirements\production.txt" />
     <Content Include="requirements\test.txt" />
+    <Content Include="riot.txt" />
     <Content Include="tests\hitchreqs.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -70,9 +76,8 @@
     <Compile Include="config\__init__.py" />
     <Compile Include="data\admin.py" />
     <Compile Include="data\apps.py" />
-    <Compile Include="data\helper.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="data\helper.py" />
+    <Compile Include="data\migrations\0001_initial.py" />
     <Compile Include="data\migrations\__init__.py" />
     <Compile Include="data\models.py" />
     <Compile Include="data\tests.py" />
@@ -104,15 +109,20 @@
     <Compile Include="mastering_masteries\users\views.py" />
     <Compile Include="mastering_masteries\users\__init__.py" />
     <Compile Include="mastering_masteries\__init__.py" />
+    <Compile Include="obj\Debug\attach_server.py" />
+    <Compile Include="obj\Debug\visualstudio_py_debugger.py" />
+    <Compile Include="obj\Debug\visualstudio_py_repl.py" />
+    <Compile Include="obj\Debug\visualstudio_py_util.py" />
+    <Compile Include="obj\Debug\__init__.py" />
+    <Compile Include="obj\Debug\__main__.py" />
     <Compile Include="tests\engine.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="config" />
     <Folder Include="config\settings" />
-    <Folder Include="data\" />
-    <Folder Include="data\migrations\" />
-    <Folder Include="data\templates\" />
-    <Folder Include="data\templates\data\" />
+    <Folder Include="data" />
+    <Folder Include="data\migrations" />
+    <Folder Include="data\templates" />
     <Folder Include="docs" />
     <Folder Include="mastering_masteries" />
     <Folder Include="mastering_masteries\contrib" />
@@ -130,11 +140,23 @@
     <Folder Include="mastering_masteries\users" />
     <Folder Include="mastering_masteries\users\migrations" />
     <Folder Include="mastering_masteries\users\tests" />
+    <Folder Include="obj\" />
+    <Folder Include="obj\Debug" />
     <Folder Include="requirements" />
     <Folder Include="tests" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\3.4" />
+    <Interpreter Include="..\..\..\Envs\mastery\">
+      <Id>{d59e3917-b688-415f-b127-7dcdd3ae9101}</Id>
+      <BaseInterpreter>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</BaseInterpreter>
+      <Version>3.4</Version>
+      <Description>mastery (Python 3.4)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <LibraryPath>Lib\</LibraryPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>
@@ -145,7 +167,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60866/</IISUrl>
+          <IISUrl>http://localhost:54634/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

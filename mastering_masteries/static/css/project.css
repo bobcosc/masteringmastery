@@ -36,7 +36,10 @@ body {
 .small-margin-top-bottom {
     margin:10px 0;
 }
-
+.center {
+    margin:auto;
+    text-align:center ;
+}
 .navbar a {
     color:#555;
 }
@@ -150,7 +153,7 @@ footer {
     margin-right:1em;
 }
 
-,bronze {
+.bronze {
     color:#9C6963;
 }
 

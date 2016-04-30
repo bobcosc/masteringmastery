@@ -1,6 +1,6 @@
 /* Project specific Javascript goes here. */
 $(function () {
-    $('#annie').highcharts({
+    $('.annie').highcharts({
         credits: {
             enabled: false
         },
