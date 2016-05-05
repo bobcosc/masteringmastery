@@ -1,0 +1,22 @@
+{
+  "name": "mastery",
+  "homepage": "https://github.com/bobcosc/masteringmastery",
+  "authors": [
+    "bobsnewgit <bobsnewgit@gmail.com>"
+  ],
+  "description": "bower dependencies",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.0.2",
+    "jquery": "^2.2.3"
+  }
+}

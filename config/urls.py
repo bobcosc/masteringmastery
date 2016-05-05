@@ -7,8 +7,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
-from data.views import IndexView
+from data.views import *
+from data.models import PlayerChampionMastery
+from rest_framework import routers, serializers, viewsets
+from rest_framework.urlpatterns import format_suffix_patterns
 
+
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+
+urlpatternsrest = [
+    url(r'^players/$', PlayerList.as_view()),
+    url(r'^champions/$', ChampionList.as_view()),
+    url(r'^mastery/$', MasteryList.as_view()),
+    #url(r'^players/(?P<pk>[0-9]+)/$', PlayerDetail.as_view()),
+]
+urlpatternsrest = format_suffix_patterns(urlpatternsrest)
 urlpatterns = [
     url(r'^$', IndexView.as_view(), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
@@ -19,11 +34,15 @@ urlpatterns = [
     # User management
     url(r'^users/', include('mastering_masteries.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^', include(router.urls)),
 
     # Your stuff: custom urls includes go here
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += urlpatternsrest
 
 if settings.DEBUG:
     # This allows the error pages to be debugged during development, just visit

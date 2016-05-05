@@ -20,6 +20,8 @@ class Champion(models.Model):
 
     def __str__(self):
             return '%s' % (self.champion_name)
+    class Meta:
+        ordering = ['champion_name']
 
 class PlayerChampionMastery(models.Model):
     summoner = models.ForeignKey(Player)
@@ -31,3 +33,4 @@ class PlayerChampionMastery(models.Model):
 
     class Meta:
         unique_together = ('summoner', 'champion',)
+        ordering = ['-points']

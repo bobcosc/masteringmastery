@@ -1,0 +1,261 @@
+/* These styles are generated from project.scss. */
+
+.alert-debug {
+  color: black;
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+html, body {
+    background-color:#fcfcfc;
+}
+/* Display django-debug-toolbar.
+   See https://github.com/django-debug-toolbar/django-debug-toolbar/issues/742
+   and https://github.com/pydanny/cookiecutter-django/issues/317
+*/
+[hidden][style="display: block;"] {
+  display: block !important;
+}
+
+.navbar {
+    background-color:#FCC000 ;
+   
+
+}
+body {
+   color:#555;
+   padding-bottom:100px;
+   padding-top:75px;
+   font-family:'Open Sans';
+}
+.small-margin-top-bottom {
+    margin:10px 0;
+}
+.center {
+    margin:auto;
+    text-align:center ;
+}
+.navbar a {
+    color:#555;
+}
+
+.pink {
+    color:#F1A9A0;
+}
+
+.navbar span {
+    
+    text-transform:uppercase;
+}
+
+.cursive {
+    font-family:"Pacifico";
+}
+
+.page-header {
+    border-bottom:none;
+    margin:0;
+    font-size:3.5em;
+    font-weight:600;
+    
+}
+
+.shadow{
+	-webkit-box-shadow:0 10px 10px -5px #28242F;
+	   -moz-box-shadow: 0 10px 10px -5px #28242F;
+	        box-shadow: 0 10px 10px -5px #28242F;
+}
+.top {    
+    background-color:#643896;
+    background-image:url('/static/diana.png');
+    background-repeat:no-repeat;
+    background-position:right;
+    margin-bottom:1em;
+
+}
+.masthead {
+    padding:2em;
+    margin-bottom:1em;
+    color:white;
+}
+.masthead p {
+    padding:0 3em;
+    max-width:750px;
+}
+
+.pink-border {
+    border-top:3px dashed lightpink;
+    border-bottom:3px dashed lightpink;
+}
+
+section {
+    padding:1em 0;
+}
+.center {
+    text-align:center;
+    margin:auto;
+}
+
+.med-margin-top {
+    margin-top:1em;
+}
+
+.player-card {
+    padding:1em;
+    background:#643896;
+    margin-bottom:1.5em;
+}
+
+.preview-image {
+
+}
+
+.card-bottom {
+
+    margin:1em 0;
+    padding:.5em;
+    background:white;
+     border-top-left-radius: 10px;
+  /* Note there is no / symbol here! */
+  border-bottom-right-radius: 80px 40px;
+
+}
+
+.card-bottom a {
+    color: #643896;
+    font-weight:600;
+}
+.viewers {
+   font-size:80%;
+}
+
+.purple {
+    color:#643896;
+}
+
+footer {
+    text-align:center;
+}
+
+.vertical-center {
+    vertical-align:middle;
+}
+.no-padding {
+    padding:0;
+}
+
+.card-bottom img {
+    margin-right:1em;
+}
+
+.bronze {
+    color:#9C6963;
+}
+
+.silver {
+    color:#C0C0C0;
+}
+
+.gold {
+    color:	#FFD700;
+}
+
+.platinum {
+    color:#E5E4E2;
+}
+
+.diamond {
+    color:#4EE2EC;
+
+}
+
+.effect4
+{
+  position: relative;
+  
+}
+.effect4:after
+{
+   
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 13px;
+    right: 7px;
+  left: auto;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+}
+
+.huge-font {
+    font-size:64px;
+}
+
+.med-padding-bottom {
+    padding-bottom:2em;
+}
+
+
+.modal-header {
+    background-color: #643896;
+    color:#fff;
+}
+
+.white {
+    color:#fff;
+}
+
+.close:hover, close:focus {
+    color:lightpink;
+}
+
+.left-align {
+    text-align:left;
+}
+
+a.pink:hover, a.pink:active, a.pink:focus {
+    color:lightpink;
+    text-decoration:underline;
+}
+
+.contact-form label{ 
+    width:200px;   
+    text-align:right;
+    
+}
+.contact-form input, .contact-form textarea {
+    width:400px;
+}
+.contact-form button{
+    margin:0 auto;
+    display:block;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border:none;
+}
+
+
+
+a .page-header , .masthead a:hover, .masthead a:active, .masthead a:focus{
+    color:white;
+    text-decoration:none;
+}
+.col-md-12 iframe {
+    display:block;
+}

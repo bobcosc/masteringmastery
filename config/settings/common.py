@@ -9,12 +9,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from __future__ import absolute_import, unicode_literals
-
+import os
 import environ
-
+from os.path import abspath, basename, dirname, join, normpath
 ROOT_DIR = environ.Path(__file__) - 3  # (/a/b/myfile.py - 3 = /)
 APPS_DIR = ROOT_DIR.path('mastering_masteries')
 
+DJANGO_ROOT = dirname(dirname(abspath(__file__)))  
+SITE_ROOT = dirname(DJANGO_ROOT)  
+SITE_NAME = basename(DJANGO_ROOT)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 env = environ.Env()
 
 # APP CONFIGURATION
@@ -33,6 +37,7 @@ DJANGO_APPS = (
 
     # Admin
     'django.contrib.admin',
+    
 )
 THIRD_PARTY_APPS = (
     'crispy_forms',  # Form layouts
@@ -40,6 +45,9 @@ THIRD_PARTY_APPS = (
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'data',
+    'rest_framework',
+    'pipeline',
+    'webpack_loader',
 )
 
 # Apps specific for this project go here.
@@ -133,7 +141,7 @@ TEMPLATES = [
         'DIRS': [
             str(APPS_DIR.path('templates')),
 
-        ],
+        ],       
         'OPTIONS': {
             # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
             'debug': DEBUG,
@@ -173,14 +181,61 @@ STATIC_URL = '/static/'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
     str(APPS_DIR.path('static')),
+    os.path.join(BASE_DIR, 'assets'), 
 )
-
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#staticfiles-finders
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
 )
 
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': 'bundles/', # must end with slash
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'IGNORE': ['.+\.hot-update.js', '.+\.map']
+    }
+}
+   
+# browserify-specific
+PIPELINE_COMPILERS = (  
+    'pipeline_browserify.compiler.BrowserifyCompiler',
+)
+
+
+if DEBUG:  
+    PIPELINE_BROWSERIFY_ARGUMENTS = '-t babelify'
+
+PIPELINE = {  
+    'PIPELINE_ENABLED': True,
+    'STYLESHEETS': {
+        'mycss': {
+        'source_filenames': (
+            'css/style.css',
+            'css/project.css',
+        ),
+        'output_filename': 'css/mysite_css.css',
+        }
+    },
+    'JAVASCRIPT': {
+        'react': {
+        'source_filenames': (
+            'js/bower_components/jquery/dist/jquery.min.js',
+            'js/bower_components/react/JSXTransformer.js',
+            'js/bower_components/react/react-with-addons.js',
+            'js/app.browserify.js',
+        ),
+        'output_filename': 'js/mysite_js.js',
+        }
+    }
+}
+
+PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.NoopCompressor'  
+PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.uglifyjs.UglifyJSCompressor'
 # MEDIA CONFIGURATION
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-root
@@ -233,3 +288,11 @@ BROKER_URL = env('CELERY_BROKER_URL', default='django://')
 ADMIN_URL = r'^admin/'
 
 # Your common stuff: Below this line define 3rd party library settings
+#REST FRAMEWORK
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
